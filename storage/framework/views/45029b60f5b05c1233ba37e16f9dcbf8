@@ -1,0 +1,88 @@
+ 
+ <?php $__env->startSection('content'); ?>
+        <?php /*slider section*/ ?> 
+        <!-- Section Title -->   
+               
+            <section class="section-title img-gallery">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>News</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                            <li>/</li>
+                            <li><a href="<?php echo e(url('articleDetail')); ?>">News</a></li>
+                                                                 
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="<?php echo url('public/img/img-theme/shp.png'); ?>" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container">
+                    <!-- Nav Filters -->
+                    <div class="portfolioFilter">
+                        <h3><?php echo $news->title; ?>   </h3>
+                        <small><?php echo $news->date_created; ?> </small>
+                    </div>
+                    <!-- End Nav Filters -->
+                    
+                    <!-- Items Gallery filters-->
+        
+                     <!-- Items Gallery filters-->
+                    <div class="portfolioplayerContainer">
+                        
+                        <ul>
+                        <div class="row">
+                            <div class="col-md-12">                       
+                           
+                                
+                                        <!-- Item Player -->  
+                               <a href="<?php echo url('public/img/uploads/article/'.$news->image); ?>"> <img class="img-responsive" src="<?php echo url('public/img/uploads/article/'.$news->image); ?>" ></a>
+                                 
+                                        
+                               <br>
+
+                                       
+                     
+   
+                                          <?php echo $news->description; ?>
+
+                                    
+                                      
+                            </div>            
+                                        <!-- End Player post -->
+
+                        </div>
+                        </ul>
+                      
+                    </div>
+                <!-- /.panel-body -->
+                                        
+                                       
+                          
+                                    <!-- End Item Players-->  
+                </div>
+                                <!-- Tab Two - Players Staff -->
+           
+                
+ 
+<br><br>
+                       
+
+      
+  <?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

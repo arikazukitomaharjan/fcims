@@ -1,0 +1,84 @@
+
+  <?php echo $__env->make('adminInclude/head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+  <?php /*headeer section*/ ?>
+  <header class="site-header">
+        <?php echo $__env->make('adminInclude/header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  </header>
+  <?php /*end of header section*/ ?>
+ 
+  <?php /*navigation section*/ ?>
+   <?php echo $__env->make('adminInclude/navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <?php /*end of navigation section*/ ?>
+ <div class="ch-container">
+    <div class="row">
+   
+         <?php /*left navigation section*/ ?>
+         <?php echo $__env->make('adminInclude/leftNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+         <?php /*end of left navigation section*/ ?>
+    
+         <div id="content" class="col-lg-10 col-sm-10">
+                <?php echo $__env->make('adminInclude/errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                <?php echo $__env->make('adminInclude/message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+       
+
+        
+            <!-- content starts -->
+        
+                <?php echo $__env->yieldContent('breadcrumb'); ?>
+          </div>
+
+          
+
+          
+          <div class="col-md-10">
+            <?php /*container section*/ ?>
+               <?php echo $__env->yieldContent('adminContent'); ?>
+          </div>  
+    </div>
+
+         
+      
+</div>
+
+          <?php echo $__env->yieldContent('js_code'); ?>
+   
+  <script src="<?php echo e(asset('public/bower_components/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
+
+<!-- library for cookie management -->
+<script src="<?php echo e(asset('public/js/jquery.cookie.js')); ?>"></script>
+<!-- calender plugin -->
+<script src="<?php echo e(asset('public/bower_components/moment/min/moment.min.js')); ?>"></script>
+<script src="<?php echo e(asset('public/bower_components/fullcalendar/dist/fullcalendar.min.js')); ?>"></script>
+<!-- data table plugin -->
+<!-- <script src="/js/jquery.dataTables.js"></script> -->
+<script src="<?php echo e(asset('public/js/jquery.dataTables.js')); ?>"></script>
+<!-- select or dropdown enhancer -->
+<script src="<?php echo e(asset('public/bower_components/chosen/chosen.jquery.min.js')); ?>"></script>
+<!-- plugin for gallery image view -->
+<script src="<?php echo e(asset('public/bower_components/colorbox/jquery.colorbox-min.js')); ?>"></script>
+<!-- notification plugin -->
+<script src="<?php echo e(asset('public/js/jquery.noty.js')); ?>"></script>
+<!-- library for making tables responsive -->
+<script src="<?php echo e(asset('public/bower_components/responsive-tables/responsive-tables.js')); ?>"></script>
+<!-- tour plugin -->
+<script src="<?php echo e(asset('public/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js')); ?>"></script>
+<!-- star rating plugin -->
+<script src="<?php echo e(asset('public/js/jquery.raty.min.js')); ?>"></script>
+<!-- for iOS style toggle switch -->
+<script src="<?php echo e(asset('public/js/jquery.iphone.toggle.js')); ?>"></script>
+<!-- autogrowing textarea plugin -->
+<script src="<?php echo e(asset('public/js/jquery.autogrow-textarea.js')); ?>"></script>
+<!-- multiple file upload plugin -->
+<script src="<?php echo e(asset('public/js/jquery.uploadify-3.1.min.js')); ?>"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="<?php echo e(asset('public/js/jquery.history.js')); ?>"></script>
+<!-- application script for Charisma demo -->
+<script src="<?php echo e(asset('public/js/charisma.js')); ?>"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,108 @@
+ 
+ <?php $__env->startSection('content'); ?>
+  		<?php /*slider section*/ ?> 
+  		<!-- Section Title -->           
+            <section class="section-title img-gallery">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>CLub</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                            <li>/</li>
+                            <li><a href="<?php echo e(url('clubDetail')); ?>">Club Detail</a></li>
+                                                                 
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="public/img/img-theme/shp.png" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container">
+                    <!-- Nav Filters -->
+                    <div class="portfolioFilter">
+                          <br>
+                     
+                          <div class="row">
+                         <?php echo Form::open(array('method' => 'Post', 'url' => 'posts/search')); ?>
+
+                         <div class="col-md-3">
+                         </div>
+                           <div class="col-md-3">
+                                 <div class="form-group">
+                                    <label class="sr-only" for="search_text">Search Text</label>
+                                    <?php echo Form::text('search_text',null,array('class'=>'form-control', 'placeholder' => 'Search club')); ?>
+
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                            
+                        <?php echo form::submit('Search Club',[' class'=>'btn btn-primary form-control']); ?>
+
+                            </div>
+
+                        <?php echo Form::close(); ?>
+
+                        </div>
+                    </div>
+                    <!-- End Nav Filters -->
+					
+                    <!-- Items Gallery filters-->
+
+                     <!-- Items Gallery filters-->
+                    <div class="portfolioclubContainer">
+
+                     <div class="panel-box">
+                        <div class="titles">
+                            <h4>CLUB TEAM</h4>
+                        </div>
+                        <!-- Item club -->
+                        <div class="row clubs-teams">
+                            <!-- Item clubs -->
+                            <?php foreach($clubs as $club): ?>
+                            <div class="col-sx-12 col-sm-6 col-md-4">
+                                <div class="item-clubs">
+                                    <div class="img-clubs">
+                                         <img class="img-responsive" src="<?php echo url('public/img/uploads/thumbnails/club/'.$club->club->image); ?>"  >
+                                    </div>
+                                    <div class="info-clubs">
+                                         <h4> <a href="<?php echo url('clubhistories/' . $club->id); ?>"><?php echo $club->club->name; ?></a></h4>
+                                         <p class="style= color:blue;"><?php echo $club->club->contact_no; ?></p>
+                                         <a href="<?php echo url('http://'.$club->club->website); ?>"><p class="style= color:blue;"><?php echo $club->club->website; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                           <?php endforeach; ?>
+                        </div>
+                        <!-- End Item club -->
+                    </div>
+
+
+                       
+                    </div>
+                <!-- End Content Central -->
+
+
+
+                       
+            </div>
+ <div class="col-md-5"></div>
+  <div class="pagination"> <?php echo $clubs->render(); ?></div>
+
+  <br><br>
+        <?php /*end of slider section*/ ?>
+  <?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

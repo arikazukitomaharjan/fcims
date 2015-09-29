@@ -1,0 +1,36 @@
+
+<nav class="mainmenu ">
+                    <div class="container">
+                        <!-- Menu-->
+                        <ul class="sf-menu" id="menu">
+                            <li class="selected">
+                                <a href="<?php echo e(url('/')); ?>">Home</a>
+                            </li>     
+                            <li>
+                                <a href="<?php echo e(url('playerDetail')); ?>">Player</a>
+                            </li>     
+                             <li>
+                                  <a href="<?php echo e(url('clubDetail')); ?>">Club</a>
+                              </li>
+                              <li>
+                                  <a href="<?php echo e(url('coachdetail')); ?>">Coach</a>
+                              </li>
+                            <li>
+                                  <a href="<?php echo e(url('articleDetail')); ?>">News</a>
+                              </li>        
+                                
+                             <li>
+                                  <a href="<?php echo e(url('gallery')); ?>">Gallery</a>
+                              </li>     
+                               <li>
+                                  <a href="<?php echo e(url('clubranking')); ?>">Club Ranking</a>
+                              </li>                                     
+                            
+                           
+                            <li>
+                                <a href="<?php echo e(url('auth/login')); ?>">Login</a>
+                            </li>
+                        </ul
+                    </div>
+                </nav>
+

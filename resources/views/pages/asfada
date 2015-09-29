@@ -1,0 +1,51 @@
+ @extends('master')
+ @section('slider')
+      {{--slider section--}}  
+              <!-- Section Title -->           
+            <section class="section-title img-news">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>Single News</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li>/</li>
+                            <li><a href="{{ url('playerDetail') }}">Players</a></li>
+                                                                 
+                        </ul>
+                    </div>        
+                </div>
+
+               
+              
+                   <img class="img-responsive" src="{!! url('img/uploads/player/'.$players->image) !!}" >
+                                    
+
+                    <h4>{!!$players->name!!}</h4>
+               
+
+               <div class="col-md-12 additional-desc">
+
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#biography" data-toggle="tab">Basic information</a>
+                        </li>
+                        <li><a href="#history" data-toggle="tab">History of player</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                </div>
+
+                   
+     @stop

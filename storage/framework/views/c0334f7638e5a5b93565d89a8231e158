@@ -1,0 +1,71 @@
+<?php $__env->startSection('breadcrumb'); ?>
+
+            
+<ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Coach</a>
+        </li>
+        <li>
+            <a href="#">Create</a>
+        </li>
+    </ul>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('adminContent'); ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><center><b>Update Coach</b></center></div>
+
+                    <div class="panel-body">
+                            <?php echo Form::model($coachdetail,array('method' => 'PATCH','route'=>array('coachhistories.update',$coachdetail->id))); ?>
+
+                            <fieldset>
+                                 <div class="form-group">
+                                                                <label><b>NAME</b></label>
+                                                                <?php echo Form::select('coach_id',$coach,null,array('class'=>'form-control tag')); ?>
+
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label><b>CLUB</b></label>
+                                                                <?php echo Form::select('club_id',$club,null,array('class'=>'form-control tag')); ?>
+
+
+                                                            </div>
+                                                             <div class="form-group">
+                                                                 <label><b>STATUS</b></label>
+                                                                 <?php echo Form::select('status', ['player'=>'player','coach'=>'coach','expire'=>'expire']); ?>
+
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label><b>START DATE</b></label>
+                                                                <?php echo Form::text('date_start',null,array('class'=>'form-control')); ?>
+
+
+                                                            </div>
+                                                             <div class="form-group">
+                                                                <label><b>START DATE</b></label>
+                                                                <?php echo Form::text('date_end',null,array('class'=>'form-control')); ?>
+
+
+                                                            </div>
+                                                            <br><br>
+                                <center><?php echo form::submit('Update Coach',[' class'=>'btn btn-primary form-control']); ?></center>
+
+                            </fieldset>
+                        <?php echo Form::close(); ?>
+
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div><!-- /col-lg-9 END SECTION MIDDLE -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('adminMaster', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

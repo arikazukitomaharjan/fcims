@@ -1,0 +1,81 @@
+<?php $__env->startSection('breadcrumb'); ?>
+  
+
+            
+<ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Club</a>
+        </li>
+    </ul>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('adminContent'); ?>
+     <div class="row">
+    <div class="box col-md-12">
+    <div class="box-inner">
+    <div class="box-header well" data-original-title="">
+        
+                    <a href="<?php echo e(url('clubs/create')); ?>"><i class="glyphicon glyphicon-plus-sign"></i> <h4 class="pull-right"></h4></a>
+                
+
+        <div class="box-icon">
+
+            <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
+            <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                    class="glyphicon glyphicon-chevron-up"></i></a>
+            <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+    </div>
+    <div class="box-content">
+
+     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+    <thead>
+    <tr>
+             					<th >ID</th>
+             					<th >NAME</th>
+                                <th >ESTABLISH</th>
+                                                             
+                                  
+	                          <th >CEO</th>
+	                          <th>LOCATION</th>
+	                          <th >CONTACT</th>                                 
+	                          <th >EMAIL</th>
+	                          
+	                           <th >WEBSITE</th>
+                               <th >ACTION</th>
+                          
+	</tr>
+    </thead>
+    <tbody>   
+    
+          <?php foreach($club as $club): ?>
+                                  <tr>
+                                <td><?php echo $club->id; ?></td>
+                                <td><?php echo $club->name; ?></td>
+                                <td><?php echo $club->est_date; ?></td>
+                                <td><?php echo $club->CEO; ?></td>
+                                <td><?php echo $club->tole; ?></td>
+                                <td><?php echo $club->contact_no; ?></td>
+                                <td><?php echo $club->email_id; ?></td>
+                                <td><?php echo $club->website; ?></td>
+                               <td><?php echo link_to_route('clubs.edit', '', array($club->id),array('class' => 'glyphicon glyphicon-edit')); ?></td>
+                               
+                                
+                                </tr>
+                                <?php endforeach; ?>
+    
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+                    
+                 
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('adminMaster', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

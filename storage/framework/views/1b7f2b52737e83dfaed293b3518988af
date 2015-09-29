@@ -1,0 +1,191 @@
+<?php $__env->startSection('breadcrumb'); ?>
+
+            
+<ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Players History</a>
+        </li>
+        <li>
+            <a href="#">Create</a>
+        </li>
+    </ul>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('adminContent'); ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><center><b>Add Player History</b></center></div>
+
+                    <div class="panel-body">
+                            <?php echo Form::open(['route'=>'playerhistories.store']); ?>
+
+                            <fieldset>
+                                 
+                                 <div class = "col-md-6">
+                                   <div class="form-group">
+                                        
+                                        <label><b>PLAYER</b></label>
+                                        <?php echo Form::select('player_id',$players,null,array('class'=>'form-control tag')); ?>
+
+                                          
+                                    </div>                                  
+                                       
+
+                                
+                                    
+                                      
+                                        <div class="form-group">
+                                            <label><b>STATUS</b></label>
+                                            <?php echo Form::select('status', ['player'=>'player','coach'=>'coach','expire'=>'expire']); ?>
+
+
+                                        </div>
+                                      
+                                          
+                                        <div class="form-group">
+                                        <label><b>DATE RANGE</b></label>
+                                        <?php echo Form::text('date_range',null,array('class'=>'form-control')); ?>
+
+
+                                    </div>
+                                          </div>
+                                <div class = "col-md-6">
+                                   <div class="form-group">
+                                            <label><b>POSTION</b></label>
+                                             <?php echo Form::select('position', 
+                                             [
+                                             'Goalkeeper',
+                                             'Defender'=>'Defender',
+                                             'Centre-back'=>'Centre-back',
+                                             'Sweeper'=>'Sweeper',
+                                             ' Full-back'=>' Full-back',
+                                             'Wing-back'=>'Wing-back',
+                                             'Midfielder'=>'Midfielder',
+                                             'Centre midfield'=>'Centre midfield',
+                                             'Defensive midfield'=>'Defensive midfield',
+                                             'Attacking midfield'=>'Attacking midfield',
+                                             ' Wide midfield'=>' Wide midfield',
+                                             'Forward'=>'Forward',
+                                             ' Centre forward'=>' Centre forward',
+                                             'Second striker'=>'Second striker'
+                                             ],null,['class'=>'form-control tag ']); ?>
+
+
+                                        </div>
+                                       <div class="form-group">
+                                        <label><b>TROPHIES</b></label>
+                                        <?php echo Form::text('won_trophies',null,array('class'=>'form-control')); ?>
+
+
+                                    </div>
+                                
+                               
+                                     <div class="form-group">
+                                        <label><b>GOAL COUNT</b></label>
+                                        <?php echo Form::text('goal',null,array('class'=>'form-control')); ?>
+
+
+                                    </div>
+                                        
+                              
+                                </div>
+                            <div class = "col-md-12">
+                                <div class="panel-body">
+                                     <div class="tab-content">
+                                         <ul class="nav nav-tabs">
+                                        
+                                            <li class="active"><a href="#tab2primary" data-toggle="tab"> CURRNT CLUB</a></li>
+                                                <li ><a href="#tab1primary" data-toggle="tab">PREVIOUS CLUB</a></li>
+                                            
+                                         </ul>
+                                          <div class="tab-pane fade" id="tab2primary">
+                                            <ul>
+                                           <label>CURRENT  CLUB</label>
+                                            <?php echo Form::select('current_club_id',$club,null,array('class'=>'form-control')); ?>
+
+                                      
+                                            </ul>
+
+                                        </div>
+                                          <div class="tab-pane fade in active" id="tab1primary">
+                                            <ul>
+                                                                         
+                                            <label>PREVIOUS CLUB</label>
+                                            <?php echo Form::select('previous_club_id',$club,null,array('class'=>'form-control')); ?>
+
+                                      
+                                                  </ul>
+                                        </div>
+                                       
+                                      </div>
+                                  </div>
+                               
+
+                                <div class="panel-body">
+                                     <div class="tab-content">
+                                         <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#newsalary" data-toggle="tab"> SALARY</a></li>
+                                            <li ><a href="#salary" data-toggle="tab">PREVIOUS SALARY</a></li>
+                                         
+                                            
+                                         </ul>
+                                          <div class="tab-pane fade" id="newsalary">
+                                            <ul>
+                                           `<label><b>NEW SALARY</b></label>
+                                                <?php echo Form::text('new_salary',null,array('class'=>'form-control')); ?>
+
+
+                                            </ul>
+
+                                        </div>
+                                          <div class="tab-pane fade in active" id="salary">
+                                            <ul> <label><b>SALARY</b></label>
+                                                    <?php echo Form::text('salary',null,array('class'=>'form-control')); ?>   </ul>
+                                        </div>
+                                       
+                                      </div>
+                                  </div>
+                                <div>
+                            </div>
+                                <br><br>
+                                <center><?php echo form::submit('Add Player History',[' class'=>'btn btn-primary form-control']); ?></center>
+
+                            </fieldset>
+                        <?php echo Form::close(); ?>
+
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div><!-- /col-lg-9 END SECTION MIDDLE -->
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('js_code'); ?>
+    <script>
+       $(function(){
+            
+            $('.tag').select2({
+                placeholder:'select ',
+                 theme: "classic",
+               
+                
+                 tokenSeparators: [',', ' ']
+ 
+               
+                
+            });
+
+        });
+    </script>
+   
+<link href="<?php echo e(asset('js/select/css/select2.min.css')); ?>" rel="stylesheet">
+<link href="<?php echo e(asset('js/select/css/select2.css')); ?>" rel="stylesheet">
+<script src="<?php echo e(asset('js/select/js/select2.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/select/js/select2.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('adminMaster', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

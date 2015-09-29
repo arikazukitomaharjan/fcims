@@ -1,0 +1,95 @@
+|        | GET|HEAD                       | auth/register/{one?}/{two?}/{three?}/{four?}/{five?}  |                         | App\Http\Controllers\Auth\AuthController@getRegister       | guest      |
+|        | POST                           | auth/register/{one?}/{two?}/{three?}/{four?}/{five?}  |                         | App\Http\Controllers\Auth\AuthController@postRegister      | guest      |
+|        | GET|HEAD                       | auth/login/{one?}/{two?}/{three?}/{four?}/{five?}     |                         | App\Http\Controllers\Auth\AuthController@getLogin          | guest      |
+|        | POST                           | auth/login/{one?}/{two?}/{three?}/{four?}/{five?}     |                         | App\Http\Controllers\Auth\AuthController@postLogin         | guest      |
+|        | GET|HEAD                       | auth/logout/{one?}/{two?}/{three?}/{four?}/{five?}    |                         | App\Http\Controllers\Auth\AuthController@getLogout         |            |
+|        | GET|HEAD|POST|PUT|PATCH|DELETE | auth/{_missing}                                       |                         | App\Http\Controllers\Auth\AuthController@missingMethod     | guest      |
+|        | GET|HEAD                       | password/email/{one?}/{two?}/{three?}/{four?}/{five?} |                         | App\Http\Controllers\Auth\PasswordController@getEmail      | guest      |
+|        | POST                           | password/email/{one?}/{two?}/{three?}/{four?}/{five?} |                         | App\Http\Controllers\Auth\PasswordController@postEmail     | guest      |
+|        | GET|HEAD                       | password/reset/{one?}/{two?}/{three?}/{four?}/{five?} |                         | App\Http\Controllers\Auth\PasswordController@getReset      | guest      |
+|        | POST                           | password/reset/{one?}/{two?}/{three?}/{four?}/{five?} |                         | App\Http\Controllers\Auth\PasswordController@postReset     | guest      |
+|        | GET|HEAD|POST|PUT|PATCH|DELETE | password/{_missing}                                   |                         | App\Http\Controllers\Auth\PasswordController@missingMethod | guest      |
+|        | GET|HEAD                       | getPlayer                                             |                         | App\Http\Controllers\PlayerController@getAllPlayer         |            |
+|        | GET|HEAD                       | getClub                                               |                         | App\Http\Controllers\ClubController@getAllClub             |            |
+|        | GET|HEAD                       | /                                                     |                         | App\Http\Controllers\PageController@index                  |            |
+|        | GET|HEAD                       | about                                                 |                         | App\Http\Controllers\PageController@about                  |            |
+|        | GET|HEAD                       | contact                                               |                         | App\Http\Controllers\PageController@contact                |            |
+|        | GET|HEAD                       | playerDetail                                          |                         | App\Http\Controllers\PageController@playerDetail           |            |
+|        | GET|HEAD                       | clubDetail                                            |                         | App\Http\Controllers\PageController@clubDetail             |            |
+|        | GET|HEAD                       | coachDetail                                           |                         | App\Http\Controllers\PageController@coachDetail            |            |
+|        | GET|HEAD                       | admin/dashboard                                       |                         | App\Http\Controllers\AdminController@dashboard             |            |
+|        | GET|HEAD                       | pages/index                                           |                         | App\Http\Controllers\PageController@index                  |            |
+|        | GET|HEAD                       | players                                               | players.index           | App\Http\Controllers\PlayerController@index                |            |
+|        | GET|HEAD                       | players/create                                        | players.create          | App\Http\Controllers\PlayerController@create               |            |
+|        | POST                           | players                                               | players.store           | App\Http\Controllers\PlayerController@store                |            |
+|        | GET|HEAD                       | players/{players}                                     | players.show            | App\Http\Controllers\PlayerController@show                 |            |
+|        | GET|HEAD                       | players/{players}/edit                                | players.edit            | App\Http\Controllers\PlayerController@edit                 |            |
+|        | PUT                            | players/{players}                                     | players.update          | App\Http\Controllers\PlayerController@update               |            |
+|        | PATCH                          | players/{players}                                     |                         | App\Http\Controllers\PlayerController@update               |            |
+|        | DELETE                         | players/{players}                                     | players.destroy         | App\Http\Controllers\PlayerController@destroy              |            |
+|        | GET|HEAD                       | clubs                                                 | clubs.index             | App\Http\Controllers\ClubController@index                  |            |
+|        | GET|HEAD                       | clubs/create                                          | clubs.create            | App\Http\Controllers\ClubController@create                 |            |
+|        | POST                           | clubs                                                 | clubs.store             | App\Http\Controllers\ClubController@store                  |            |
+|        | GET|HEAD                       | clubs/{clubs}                                         | clubs.show              | App\Http\Controllers\ClubController@show                   |            |
+|        | GET|HEAD                       | clubs/{clubs}/edit                                    | clubs.edit              | App\Http\Controllers\ClubController@edit                   |            |
+|        | PUT                            | clubs/{clubs}                                         | clubs.update            | App\Http\Controllers\ClubController@update                 |            |
+|        | PATCH                          | clubs/{clubs}                                         |                         | App\Http\Controllers\ClubController@update                 |            |
+|        | DELETE                         | clubs/{clubs}                                         | clubs.destroy           | App\Http\Controllers\ClubController@destroy                |            |
+|        | GET|HEAD                       | coach                                                 | coach.index             | App\Http\Controllers\CoachController@index                 |            |
+|        | GET|HEAD                       | coach/create                                          | coach.create            | App\Http\Controllers\CoachController@create                |            |
+|        | POST                           | coach                                                 | coach.store             | App\Http\Controllers\CoachController@store                 |            |
+|        | GET|HEAD                       | coach/{coach}                                         | coach.show              | App\Http\Controllers\CoachController@show                  |            |
+|        | GET|HEAD                       | coach/{coach}/edit                                    | coach.edit              | App\Http\Controllers\CoachController@edit                  |            |
+|        | PUT                            | coach/{coach}                                         | coach.update            | App\Http\Controllers\CoachController@update                |            |
+|        | PATCH                          | coach/{coach}                                         |                         | App\Http\Controllers\CoachController@update                |            |
+|        | DELETE                         | coach/{coach}                                         | coach.destroy           | App\Http\Controllers\CoachController@destroy               |            |
+|        | GET|HEAD                       | clubhistories                                         | clubhistories.index     | App\Http\Controllers\ClubHistoryController@index           |            |
+|        | GET|HEAD                       | clubhistories/create                                  | clubhistories.create    | App\Http\Controllers\ClubHistoryController@create          |            |
+|        | POST                           | clubhistories                                         | clubhistories.store     | App\Http\Controllers\ClubHistoryController@store           |            |
+|        | GET|HEAD                       | clubhistories/{clubhistories}                         | clubhistories.show      | App\Http\Controllers\ClubHistoryController@show            |            |
+|        | GET|HEAD                       | clubhistories/{clubhistories}/edit                    | clubhistories.edit      | App\Http\Controllers\ClubHistoryController@edit            |            |
+|        | PUT                            | clubhistories/{clubhistories}                         | clubhistories.update    | App\Http\Controllers\ClubHistoryController@update          |            |
+|        | PATCH                          | clubhistories/{clubhistories}                         |                         | App\Http\Controllers\ClubHistoryController@update          |            |
+|        | DELETE                         | clubhistories/{clubhistories}                         | clubhistories.destroy   | App\Http\Controllers\ClubHistoryController@destroy         |            |
+|        | GET|HEAD                       | playerhistories                                       | playerhistories.index   | App\Http\Controllers\PlayerHistoryController@index         |            |
+|        | GET|HEAD                       | playerhistories/create                                | playerhistories.create  | App\Http\Controllers\PlayerHistoryController@create        |            |
+|        | POST                           | playerhistories                                       | playerhistories.store   | App\Http\Controllers\PlayerHistoryController@store         |            |
+|        | GET|HEAD                       | playerhistories/{playerhistories}                     | playerhistories.show    | App\Http\Controllers\PlayerHistoryController@show          |            |
+|        | GET|HEAD                       | playerhistories/{playerhistories}/edit                | playerhistories.edit    | App\Http\Controllers\PlayerHistoryController@edit          |            |
+|        | PUT                            | playerhistories/{playerhistories}                     | playerhistories.update  | App\Http\Controllers\PlayerHistoryController@update        |            |
+|        | PATCH                          | playerhistories/{playerhistories}                     |                         | App\Http\Controllers\PlayerHistoryController@update        |            |
+|        | DELETE                         | playerhistories/{playerhistories}                     | playerhistories.destroy | App\Http\Controllers\PlayerHistoryController@destroy       |            |
+|        | GET|HEAD                       | championship                                          | championship.index      | App\Http\Controllers\ChampionshipDetailController@index    |            |
+|        | GET|HEAD                       | championship/create                                   | championship.create     | App\Http\Controllers\ChampionshipDetailController@create   |            |
+|        | POST                           | championship                                          | championship.store      | App\Http\Controllers\ChampionshipDetailController@store    |            |
+|        | GET|HEAD                       | championship/{championship}                           | championship.show       | App\Http\Controllers\ChampionshipDetailController@show     |            |
+|        | GET|HEAD                       | championship/{championship}/edit                      | championship.edit       | App\Http\Controllers\ChampionshipDetailController@edit     |            |
+|        | PUT                            | championship/{championship}                           | championship.update     | App\Http\Controllers\ChampionshipDetailController@update   |            |
+|        | PATCH                          | championship/{championship}                           |                         | App\Http\Controllers\ChampionshipDetailController@update   |            |
+|        | DELETE                         | championship/{championship}                           | championship.destroy    | App\Http\Controllers\ChampionshipDetailController@destroy  |            |
+|        | GET|HEAD                       | sliders                                               | sliders.index           | App\Http\Controllers\SliderController@index                |            |
+|        | GET|HEAD                       | sliders/create                                        | sliders.create          | App\Http\Controllers\SliderController@create               |            |
+|        | POST                           | sliders                                               | sliders.store           | App\Http\Controllers\SliderController@store                |            |
+|        | GET|HEAD                       | sliders/{sliders}                                     | sliders.show            | App\Http\Controllers\SliderController@show                 |            |
+|        | GET|HEAD                       | sliders/{sliders}/edit                                | sliders.edit            | App\Http\Controllers\SliderController@edit                 |            |
+|        | PUT                            | sliders/{sliders}                                     | sliders.update          | App\Http\Controllers\SliderController@update               |            |
+|        | PATCH                          | sliders/{sliders}                                     |                         | App\Http\Controllers\SliderController@update               |            |
+|        | DELETE                         | sliders/{sliders}                                     | sliders.destroy         | App\Http\Controllers\SliderController@destroy              |            |
+|        | GET|HEAD                       | articles                                              | articles.index          | App\Http\Controllers\ArticleController@index               |            |
+|        | GET|HEAD                       | articles/create                                       | articles.create         | App\Http\Controllers\ArticleController@create              |            |
+|        | POST                           | articles                                              | articles.store          | App\Http\Controllers\ArticleController@store               |            |
+|        | GET|HEAD                       | articles/{articles}                                   | articles.show           | App\Http\Controllers\ArticleController@show                |            |
+|        | GET|HEAD                       | articles/{articles}/edit                              | articles.edit           | App\Http\Controllers\ArticleController@edit                |            |
+|        | PUT                            | articles/{articles}                                   | articles.update         | App\Http\Controllers\ArticleController@update              |            |
+|        | PATCH                          | articles/{articles}                                   |                         | App\Http\Controllers\ArticleController@update              |            |
+|        | DELETE                         | articles/{articles}                                   | articles.destroy        | App\Http\Controllers\ArticleController@destroy             |            |
+|        | GET|HEAD                       | angular                                               | angular.index           | App\Http\Controllers\AngularController@index               |            |
+|        | GET|HEAD                       | angular/create                                        | angular.create          | App\Http\Controllers\AngularController@create              |            |
+|        | POST                           | angular                                               | angular.store           | App\Http\Controllers\AngularController@store               |            |
+|        | GET|HEAD                       | angular/{angular}                                     | angular.show            | App\Http\Controllers\AngularController@show                |            |
+|        | GET|HEAD                       | angular/{angular}/edit                                | angular.edit            | App\Http\Controllers\AngularController@edit                |            |
+|        | PUT                            | angular/{angular}                                     | angular.update          | App\Http\Controllers\AngularController@update              |            |
+|        | PATCH                          | angular/{angular}                                     |                         | App\Http\Controllers\AngularController@update              |            |
+|        | DELETE                         | angular/{angular}                                     | angular.destroy         | App\Http\Controllers\AngularController@destroy             |            |
+|        | GET|HEAD                       | player-club/{playerID}/{page?}                        |                         | App\Http\Controllers\PlayerController@getPlayerByClub      |            |
+|        | GET|HEAD                       | {path}                                                |                         | Folklore\Image\ImageController@ser

@@ -1,0 +1,201 @@
+ 
+ <?php $__env->startSection('content'); ?>
+        <?php /*slider section*/ ?> 
+        <!-- Section Title -->   
+               
+            <section class="section-title img-gallery">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>Club</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                            <li>/</li>
+                            <li><a href="<?php echo e(url('clubDetail')); ?>">Club Detail</a></li>
+                                                                 
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="<?php echo url('public/img/img-theme/shp.png'); ?>" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container">
+                    <!-- Nav Filters -->
+                    <div class="portfolioFilter">
+                        <h2>Club </h2>
+                    </div>
+                    <!-- End Nav Filters -->
+                    
+                    <!-- Items Gallery filters-->
+        
+                     <!-- Items Gallery filters-->
+                    <div class="portfolioclubContainer">
+                        
+                        <ul>
+                        <div class="row">
+                            <div class="col-md-2">                       
+                           
+                                
+                                        <!-- Item Player -->  
+                                       
+                                    
+                                        
+                                        <img class="img-responsive" src="<?php echo url('public/img/uploads/club/'.$club->club->image); ?>" >
+                                    
+                            </div>
+                            <div class="col-md-9">    
+
+                                           <h4><?php echo $club->club->name; ?></h4>                                                
+                                                  
+                                          <h6><?php echo $club->club->tole; ?></h6>
+                                          <h6><?php echo $club->club->contact_no; ?></h6>
+                                          
+                                      
+                            </div>            
+                                        <!-- End Player post -->i
+
+                        </div>
+                        </ul>
+                        <br>
+                        <br><br><br>
+                         <div class="row">
+                             <div class="col-md-6">
+
+                                <!-- /.panel-heading -->
+                                
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#basic" data-toggle="tab">Basic Information</a>
+                                        </li>
+                                        <li><a href="#players" data-toggle="tab">Players</a>
+                                        </li>
+                                      
+                                        
+                                    </ul>                
+                              
+                             <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane in active" id="basic">
+                                                 
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Decription</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <td>Name:</td>
+                                      <td><?php echo $club->club->name; ?></td>
+
+                                    </tr>
+                                      <tr>
+                                          <td>Established date:</td>
+                                          <td><?php echo $club->club->est_date; ?></td>
+                                       </tr><tr>
+                                      <td>Name:</td>
+                                      <td><?php echo $club->club->CEO; ?></td>
+
+                                    </tr>
+                                      <tr>
+                                          <td>Country:</td>
+                                          <td><?php echo $club->club->country; ?></td>
+
+
+                                    </tr>
+                                      <tr>
+                                          <td>Zone:</td>
+                                          <td><?php echo $club->club->zone; ?></td>
+                                       </tr><tr>
+                                      <td>District:</td>
+                                      <td><?php echo $club->club->district; ?></td>
+
+                                    </tr>
+                                      <tr>
+                                          <td>Municipality:</td>
+                                          <td><?php echo $club->club->municipality; ?></td>
+                                       </tr>  <tr>
+                                      <td>Ward No:</td>
+                                      <td><?php echo $club->club->ward_no; ?></td>
+
+                                    </tr>
+                                      <tr>
+                                          <td>tole:</td>
+                                          <td><?php echo $club->club->tole; ?></td>
+                                       </tr><tr>
+                                      <td>contact_no:</td>
+                                      <td><?php echo $club->club->contact_no; ?></td>
+
+                                    </tr>
+                                      <tr>
+                                          <td>Email ID:</td>
+                                          <td><?php echo $club->club->email_id; ?></td>
+                                       </tr><tr>
+                                      <td>Name:</td>
+                                      <td><?php echo $club->club->website; ?></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="players">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Player name</th>
+                                    <th>Position</th> 
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <?php foreach($clubhistories as $clubhistories): ?>
+                                <tr>
+
+                                    <td> <?php echo $clubhistories->playerName; ?>   </td>
+                                    <td>   <?php echo $clubhistories->position; ?> </td>
+
+                                </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                       
+                       
+                         
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+                                        
+                                       
+                          
+                                    <!-- End Item Players-->  
+                        </div>
+                                <!-- Tab Two - Players Staff -->
+                    <!-- End Items Gallery filters-->       
+                </div>
+                
+                </section>
+<br><br>
+
+                       
+
+      
+  <?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
